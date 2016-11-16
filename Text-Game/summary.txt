@@ -1,0 +1,144 @@
+"Special" Room Features
+Part of this project's specifications were to create special functions unique
+to each type of room. I made all rooms unique, so that just means every room
+has a special feature. Here's a short rundown of those features.
+
+The kitchen (and the bedroom) are completely unnecessary to finish the game.
+The bedroom’s special option is light switch toggling. Toggling the light 
+switch doesn’t remove any options from the menu, but it prevents the player
+from using any of them effectively besides "toggle" again.
+(This includes checking inventory and reading the hint. Try it later.)
+You can’t stumble around in the dark very well. The dirty socks you can pick
+up in the room only exists so that you can create the fabled “sockmote” later
+on, though you can also burn the sock (and the sockmote) on the stove if you
+wish. That’s kind of a waste of a perfectly good dirty sock, but you’re in
+charge here.
+
+The kitchen’s special option was just mentioned a moment ago, with the stove
+being turned on (and stuck on because of clumsy ghost dexterity) leading to an
+open flame that you can use to burn things. Burning things accomplishes nothing,
+but sometimes people want to burn things. The popcorn’s existence is only to be
+an extra item that can overfill the inventory (to show that the limit works
+properly if you actually grab everything). The proton pack is limited to two
+items. You can see that I already have three items with the sock, remote, and
+doggy biscuits. But the sock and remote combine to form the mythical sockmote,
+so I needed a fourth item to be the third item that won’t fit in the inventory.
+(This wasn’t necessary, but I wouldn’t want to keep the player from witnessing
+the glory of the sockmote.)
+
+The other yet-to-be-mentioned options are using the remote (or sockmote) with
+the TV (turning it on) and playing with your roommate’s fish. The TV is like the
+stove, in that once it’s turned on, it can’t be turned off. That well you see on
+the screen has some magical power that prevent it from being turned off. (Well,
+that or the player is just the kind of guy that leaves the TV on even when not
+watching it.) The special option for the TV (after initially turning it on)
+actually does nothing useful at all, even though it’s more complicated than some
+of the other special options (in terms of conditionals and checking for
+inventory items). It has different functions depending on whether you have the
+remote in your bag (when it’s off), and after being turned on it just prints out
+a fun little scene for you to read.
+
+The living room actually has two "special" features, in dropping the doggy
+biscuit and playing with the TV. We only have one special function though, so I
+had to think about which special ability is more important. The doggy biscuit
+drop is more important to the game’s goal, but the TV switch (and falling down
+the well) is more interesting from a coding standpoint, so it got the nod here.
+The doggy biscuit drop is simply handled in option() with a simple boolean flag
+toggle, instead of being the premier "special" feature.
+
+The roommate fish activity is a special "special" function in that doesn’t use
+the “special_toggle” boolean I created. (Instead, I used the boolean flag to
+mark the first visit status for scaring the roommate. I also reversed the flag,
+with it being set to true at the start and false afterwards. It doesn’t matter
+much, but it made sense to me from a story standpoint.) I wanted to create a
+special function that wasn’t just a toggle of the room state, so I made the
+fish pass out from fright, one at a time. The game keeps track, and tells you
+when you have successfully made all the fish unconscious. It serves no purpose,
+but it’s interactivity for the sake of interactivity. The fish count can be
+increased with a preprocessor constant, if you really enjoy the activity and
+want to poke at more fish. (If you set it higher than the timer, you can create
+the story of a ghost and his futile journey to help all the fish get to sleep.)
+
+
+Story Summary
+I want to explain the background details of the story in full. Not everything
+that’s going on is revealed to the player. While the game is really simple,
+I'd like to reveal the entire story as I’ve imagined it. (I already mentioned
+the special features of each room above, so I’ll skip that.)
+
+The player is taking a shower, when he slips and hits his head. (This is clear
+from the opening description.) He believes he stands back up immediately, but he
+was actually out for a while without noticing. When he stands up, he’s a spirit.
+He finds out after checking out his nude Bill Murray cosplay in the mirror.
+Ghosts are unable to interact much with physical objects (yet they are still
+bound by walls) and this is why he isn’t able to open the door initially.
+He thinks he’s gripping the doorknob, but he can’t actually do anything to the
+doorknob. The player is only able to interact with things afterwards because
+the electrical gloves he picked up serve as a medium between the spiritual and
+physical realms. (He "throws open the bathroom door" only after putting the
+gloves on.) His replica proton pack is kind of like that as well. Some
+Ghostbusters magic. Then he wanders around his house as a ghost, doing ghostly
+things. The player mostly acts as if he were still alive (it’s not like he’s
+used to being a ghost), but he’s all invisible (so he appears to be a floating
+pair of gloves and proton pack). The game’s timer starts after the player’s
+roommate is spooked and runs out of the house. The player’s roommate, being well
+aware of the proper authorities, wisely chose to call the Ghostbusters after
+getting a safe distance away from their home. The timer counts down 20 actions
+(this even includes invalid inputs, because invalid inputs indicate the player
+hesitating and wasting time) before Bill Murray busts in to bust the player.
+The first warning (in the faint music) occurs after five ticks of the timer
+because it takes some time for the Ghostbusters van to get close enough to
+be noticeable.
+
+The Ghostbusters, being authority figures, move around in a vehicle that has a
+siren. The siren appropriately plays the Ghostbusters theme, to announce their
+presence to the commonfolk as well as strike fear into the heartless voids of
+ghosts that understand English. 
+
+The player’s bedroom, though not described in too much detail, consists
+primarily of piles of dirty clothing and Ghostbusters’ theme song memorabilia.
+That is, he has memorabilia related to the song and Ray Parker Jr. rather than
+memorabilia from the film. His infatuation with Bill Murray and props from the
+movie are primarily so that he can recreate the music video for the theme song.
+Incidentally, Bill Murray doesn’t actually wear his electrical gloves in the
+music video, but the player seems to have forgotten that in his excitement over
+being slapped in the face by a free pair of electrical gloves.
+
+The man outside walking his dog in the player’s backyard is just a confused man.
+He’s not trying to break in or anything. The man that threw the electrical
+gloves through the bathroom window is a different man. The glove-throwing man is
+actually situated towards the front of the house. He is unfazed by the roommate
+running out of the house past him, because like Bill Murray and Ray Parker Jr.,
+that man ain’t  afraid of no ghosts. He’s just a man enjoying a stroll around
+the neighborhood that really didn’t like the player’s singing voice.
+
+The player and his roommate had a dog in the past, but the dog died about ten
+years ago (the player and his roommate are not young men). They’ve been living
+together a long time. His roommate picked up a habit of eating doggy biscuits
+with the dog (he feels really attuned to the animals), and he kept the habit
+after the dog died. The roommate’s disposition towards animals is also reflected
+in him having a “fidge bowl” in his room. (I could have added more animals to
+drive the point home, but that didn’t seem necessary.) The roommate might also
+eat fish food with his fish like he ate doggy biscuits with their dog, but that
+is not clear to the player (or me). The player is not as attuned to animals,
+though he does miss their deceased dog.
+
+The player is also not very interested in cinema compared to his roommate,
+as mentioned in the flavor text for the living room. But for some reason,
+the player’s roommate is not as interested in Ghostbusters as the player.
+(He doesn’t even notice the floating proton pack while running out of the house
+screaming.) Admittedly, the player enjoys the song more than the film.
+The player is unaware of what his roommate was watching the previous night,
+with the fuzzy well on the TV that looks like it’s from a VHS tape.
+It’s possible that the video seen on the TV contributed to his roommate’s
+jumpiness and fear of ghosts that day.
+
+A week earlier, the player’s roommate accidentally (the player doesn’t truly
+believe it was an accident, which is why he is thinking about the microwave in
+particular when in the kitchen) destroyed their microwave by heating up some
+food that had a small fork inside. The player doesn’t really understand how to
+cook, and is lost without the microwave. This can be seen from his attempts to
+cook food by placing it directly over an open flame.
+
+That's all the backstory for enjoying the game, 
+though it's of little consequence during the actual game.
